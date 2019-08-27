@@ -71,6 +71,8 @@ public class DefaultResourceManager implements ResourceManager {
     protected void initResourceManagers() {
         //init all resource managers
         //获取SPI扩展
+        //io.seata.rm.datasource.DataSourceManager
+        //io.seata.rm.tcc.TCCResourceManager
         List<ResourceManager> allResourceManagers = EnhancedServiceLoader.loadAll(ResourceManager.class);
         if (CollectionUtils.isNotEmpty(allResourceManagers)) {
             for (ResourceManager rm : allResourceManagers) {

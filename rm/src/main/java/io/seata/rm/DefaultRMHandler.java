@@ -45,6 +45,8 @@ public class DefaultRMHandler extends AbstractRMHandler {
     }
 
     protected void initRMHandlers() {
+        //io.seata.rm.RMHandlerAT
+        //io.seata.rm.tcc.RMHandlerTCC
         List<AbstractRMHandler> allRMHandlers = EnhancedServiceLoader.loadAll(AbstractRMHandler.class);
         if (CollectionUtils.isNotEmpty(allRMHandlers)) {
             for (AbstractRMHandler rmHandler : allRMHandlers) {
