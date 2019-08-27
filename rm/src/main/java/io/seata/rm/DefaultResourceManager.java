@@ -15,11 +15,6 @@
  */
 package io.seata.rm;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import io.seata.common.exception.FrameworkException;
 import io.seata.common.loader.EnhancedServiceLoader;
 import io.seata.common.util.CollectionUtils;
@@ -28,6 +23,11 @@ import io.seata.core.model.BranchStatus;
 import io.seata.core.model.BranchType;
 import io.seata.core.model.Resource;
 import io.seata.core.model.ResourceManager;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * default resource manager, adapt all resource managers
@@ -65,8 +65,12 @@ public class DefaultResourceManager implements ResourceManager {
         resourceManagers.put(branchType, rm);
     }
 
+    /**
+     * 获取SPI扩展，获取所有ResourceManager
+     */
     protected void initResourceManagers() {
         //init all resource managers
+        //获取SPI扩展
         List<ResourceManager> allResourceManagers = EnhancedServiceLoader.loadAll(ResourceManager.class);
         if (CollectionUtils.isNotEmpty(allResourceManagers)) {
             for (ResourceManager rm : allResourceManagers) {
@@ -76,6 +80,7 @@ public class DefaultResourceManager implements ResourceManager {
     }
 
     @Override
+    //根据BranchType获取对应rm执行对应rm事务逻辑
     public BranchStatus branchCommit(BranchType branchType, String xid, long branchId,
                                      String resourceId, String applicationData)
         throws TransactionException {
