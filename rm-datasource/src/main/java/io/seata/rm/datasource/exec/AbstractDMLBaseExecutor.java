@@ -15,16 +15,15 @@
  */
 package io.seata.rm.datasource.exec;
 
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import io.seata.rm.datasource.AbstractConnectionProxy;
 import io.seata.rm.datasource.StatementProxy;
 import io.seata.rm.datasource.sql.SQLRecognizer;
 import io.seata.rm.datasource.sql.struct.TableRecords;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * The type Abstract dml base executor.
@@ -111,7 +110,7 @@ public abstract class AbstractDMLBaseExecutor<T, S extends Statement> extends Ba
 
     /**
      * Before image table records.
-     *
+     * 记录image
      * @return the table records
      * @throws SQLException the sql exception
      */
@@ -119,7 +118,7 @@ public abstract class AbstractDMLBaseExecutor<T, S extends Statement> extends Ba
 
     /**
      * After image table records.
-     *
+     * 记录image
      * @param beforeImage the before image
      * @return the table records
      * @throws SQLException the sql exception

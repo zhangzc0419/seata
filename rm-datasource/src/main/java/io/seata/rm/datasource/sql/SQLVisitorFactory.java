@@ -41,7 +41,7 @@ public class SQLVisitorFactory {
 
     /**
      * Get sql recognizer.
-     *
+     * 判断数据库类型并解析语句类型，获取对应recognizer类型
      * @param sql    the sql
      * @param dbType the db type
      * @return the sql recognizer

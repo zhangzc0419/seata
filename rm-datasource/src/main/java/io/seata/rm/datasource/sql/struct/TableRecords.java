@@ -29,6 +29,7 @@ import java.util.List;
  *
  * @author sharajava
  */
+//记录beforeImage, afterImage
 @JsonIgnoreProperties({"tableMeta"})
 public class TableRecords {
 

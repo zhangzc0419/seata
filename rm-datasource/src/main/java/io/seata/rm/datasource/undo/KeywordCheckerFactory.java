@@ -30,7 +30,7 @@ public class KeywordCheckerFactory {
 
     /**
      * get keyword checker
-     *
+     * 根据db类型获取checker
      * @param dbType the db type
      * @return keyword checker
      */

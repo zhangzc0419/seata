@@ -20,6 +20,7 @@ package io.seata.rm.datasource.sql;
  *
  * @author sharajava
  */
+//sql类型枚举值
 public enum SQLType {
 
     /**

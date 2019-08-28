@@ -49,7 +49,7 @@ import static io.seata.core.exception.TransactionExceptionCode.BranchRollbackFai
 
 /**
  * The type Undo log manager.
- *
+ * mysql manager
  * @author sharajava
  * @author Geng Zhang
  */

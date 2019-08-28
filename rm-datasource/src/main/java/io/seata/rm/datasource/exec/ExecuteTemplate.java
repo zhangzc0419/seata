@@ -25,7 +25,7 @@ import java.sql.Statement;
 
 /**
  * The type Execute template.
- *
+ * 在各个代理类中被使用
  * @author sharajava
  */
 public class ExecuteTemplate {
