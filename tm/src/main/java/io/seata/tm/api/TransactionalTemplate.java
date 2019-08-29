@@ -28,7 +28,7 @@ import java.util.List;
 
 /**
  * Template of executing business logic with a global transaction.
- *
+ * 事务开始的地方
  * @author sharajava
  */
 public class TransactionalTemplate {

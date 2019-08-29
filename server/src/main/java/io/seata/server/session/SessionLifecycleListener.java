@@ -21,7 +21,7 @@ import io.seata.core.model.GlobalStatus;
 
 /**
  * The interface Session lifecycle listener.
- *
+ * 定义onBegin等事件接口
  * @author sharajava
  */
 public interface SessionLifecycleListener {

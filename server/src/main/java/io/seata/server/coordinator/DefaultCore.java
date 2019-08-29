@@ -41,7 +41,7 @@ import static io.seata.core.exception.TransactionExceptionCode.LockKeyConflict;
 
 /**
  * The type Default core.
- *
+ * 各种全局commit，rollback，report
  * @author sharajava
  */
 public class DefaultCore implements Core {

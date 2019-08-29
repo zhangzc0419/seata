@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * The type Server.
- *
+ * tc server端
  * @author jimin.jm @alibaba-inc.com
  */
 public class Server {

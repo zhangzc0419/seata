@@ -78,6 +78,7 @@ import static io.seata.core.exception.TransactionExceptionCode.FailedToSendBranc
 
 /**
  * The type Default coordinator.
+ * 调用DefaultCore执行commit等
  */
 public class DefaultCoordinator extends AbstractTCInboundHandler
     implements TransactionMessageHandler, ResourceManagerInbound, Disposable {
