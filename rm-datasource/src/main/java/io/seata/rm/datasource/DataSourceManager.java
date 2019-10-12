@@ -34,7 +34,7 @@ import io.seata.core.protocol.transaction.GlobalLockQueryResponse;
 import io.seata.core.rpc.netty.NettyClientConfig;
 import io.seata.core.rpc.netty.RmRpcClient;
 import io.seata.core.rpc.netty.TmRpcClient;
-import io.seata.discovery.loadbalance.LoadBarm-datasource/src/main/java/io/seata/rm/datasource/exec/AbstractDMLBaseExecutor.javalanceFactory;
+import io.seata.discovery.loadbalance.LoadBalanceFactory;
 import io.seata.discovery.registry.RegistryFactory;
 import io.seata.rm.AbstractResourceManager;
 import io.seata.rm.datasource.undo.UndoLogManagerFactory;

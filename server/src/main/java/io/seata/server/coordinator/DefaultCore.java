@@ -144,6 +144,9 @@ public class DefaultCore implements Core {
     }
 
     @Override
+    /**
+     * 事务提交
+     */
     public GlobalStatus commit(String xid) throws TransactionException {
         GlobalSession globalSession = SessionHolder.findGlobalSession(xid);
         if (globalSession == null) {
@@ -174,11 +177,15 @@ public class DefaultCore implements Core {
     }
 
     @Override
+    /**
+     * 全局事务提交
+     */
     public void doGlobalCommit(GlobalSession globalSession, boolean retrying) throws TransactionException {
         //start committing event
         eventBus.post(new GlobalTransactionEvent(globalSession.getTransactionId(), GlobalTransactionEvent.ROLE_TC,
             globalSession.getTransactionName(), globalSession.getBeginTime(), null, globalSession.getStatus()));
 
+        //提交分支事务
         for (BranchSession branchSession : globalSession.getSortedBranches()) {
             BranchStatus currentStatus = branchSession.getStatus();
             if (currentStatus == BranchStatus.PhaseOne_Failed) {
